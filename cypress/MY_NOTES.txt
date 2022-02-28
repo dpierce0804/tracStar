@@ -1,0 +1,32 @@
+Hello!
+
+Thank you for reviewing my work.  Please review the following file notes:
+
+  ./support/commands.js
+    contains a couple of commands that are reused throughout the project.  I placed the standard_user login and the sorting logic in this file.  I had an issue with the price sorting array and could not get the items price to be read.  I feel like this is due to my approach to listing the items, but was not entirely sure why, so I commented it out and read item price outside of the array to test it's existance.  See notes in commands.js for more details
+
+  cypress.json:
+    contains the baseUrl that is used throughout the project and disabled web security for Chrome browser.  I ran into issue with testing when security was enabled and found this solution in a forum.  It's not ideal and there are ways to work around those issues without disabling all security, but this was a quick and dirty solution to acheive successful completion of tests
+
+  package.json:
+    contains scripts that group certain tests together.  Allowing the user to run one command to execute all associated tests for smoke testing, end2end, and orders testing. Code example: 'npm run cy.run.smoke'
+  ./integration/swagLabsTests/loginTesting.js:
+    Contains a pretty straight forward test of the three user accounts requested in the assignment.  The two successful logins also contain the logout functionality.
+
+  ./integration/swagLabsTests/menuSelections.js:
+    Contains the standard_user login and verification of the collapsible menu items
+
+  ./integration/swagLabsTests/sortingProducts.js
+    Contains the standard_user login and calls to ./support/commands.js sorting functions.  This solution was something that I found from searching the internet.  I understand what is being done here, but was unable to blindly hardcode these functions from experience.
+
+  ./integration/swagLabsTests/productDetails.js
+    Contains the standard_user login and verification of text associated with an item.
+
+  ./integration/swagLabsTests/checkoutFlow.js
+    Contains the standard_user login and then adding of two items into the cart.  Then the items descriptions, cost, and number of items are verified in the cart.  Then the checkout details are entered and purchase completed.
+
+  ./integration/swagLabsTests/cancelOrder.js
+    Contains the same as checkoutFlow.js except the order is cancelled on the checkout overview page
+
+
+
